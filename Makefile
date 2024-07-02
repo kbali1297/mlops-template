@@ -1,5 +1,5 @@
 install:
-	pip install --upgrade pip &&/
+	pip install --upgrade pip &&\
 		pip install -r requirements.txt
 
 test:
@@ -7,7 +7,7 @@ test:
 format:
 	black *.py mylib/*.py	
 lint:
-	pylint --disable=R,C --extension-pkg=whitelist='pedantic' main.py --ignore-patterns=test_.*py mylib/*.py
+	pylint --disable=R,C main.py
 
 container-lint:
 	docker run --rm -i hadolint/hadolint < Dockerfile
